@@ -867,25 +867,25 @@ input[type=submit]:focus-visible,
     padding: 20px;
   }
 }
-.support-card:hover, .support-card:focus-visible {
+.support-card:hover, .support-card:focus-within {
   background-color: #252B42;
   transform: scale(1.13);
   z-index: 10;
 }
-.support-card:hover .support-card__email, .support-card:focus-visible .support-card__email {
+.support-card:hover .support-card__email, .support-card:focus-within .support-card__email {
   color: #ffffff;
 }
-.support-card:hover .support-card__email:hover, .support-card:hover .support-card__email:focus-visible, .support-card:focus-visible .support-card__email:hover, .support-card:focus-visible .support-card__email:focus-visible {
+.support-card:hover .support-card__email:hover, .support-card:hover .support-card__email:focus-visible, .support-card:focus-within .support-card__email:hover, .support-card:focus-within .support-card__email:focus-visible {
   color: rgba(255, 255, 255, 0.8);
 }
-.support-card:hover .support-card__title, .support-card:focus-visible .support-card__title {
+.support-card:hover .support-card__title, .support-card:focus-within .support-card__title {
   color: #ffffff;
 }
-.support-card:hover .support-card__button, .support-card:focus-visible .support-card__button {
+.support-card:hover .support-card__button, .support-card:focus-within .support-card__button {
   border: 1px solid #FFF;
   color: #FFF;
 }
-.support-card:hover .support-card__icon, .support-card:focus-visible .support-card__icon {
+.support-card:hover .support-card__icon, .support-card:focus-within .support-card__icon {
   fill: #fff;
 }
 .support-card__icon {
