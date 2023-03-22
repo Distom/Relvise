@@ -129,6 +129,10 @@ input[type=submit]:focus-visible,
      object-fit: cover;
 }
 
+.lock {
+  overflow: hidden;
+}
+
 /* ----------------------------------------------------- */
 .block-header {
   text-align: center;
@@ -169,8 +173,20 @@ input[type=submit]:focus-visible,
   align-items: center;
   min-height: 105px;
 }
+@media (max-width: 768px) {
+  .header__container {
+    min-height: 60px;
+    position: relative;
+  }
+}
 .header__logo {
   flex: 0 0 17.8947368421%;
+}
+@media (max-width: 768px) {
+  .header__logo {
+    position: relative;
+    z-index: 105;
+  }
 }
 .header__logo-link {
   font-weight: 700;
@@ -183,16 +199,79 @@ input[type=submit]:focus-visible,
   flex: 1 1 auto;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .menu__list {
   display: flex;
   gap: 21px;
 }
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .menu__list {
-    flex-wrap: wrap;
+    flex-direction: column;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 30px;
+    padding-top: 80px;
+    text-align: center;
+    background: #fff;
+    transition: top 0.3s ease-out;
+    z-index: 100;
   }
+}
+.menu__button {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  display: none;
+  z-index: 105;
+  transition: transform 0.3s ease-out;
+}
+@media (max-width: 768px) {
+  .menu__button {
+    display: block;
+    position: absolute;
+    right: 0;
+  }
+}
+.menu__button::before, .menu__button::after, .menu__button_line {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  transition: transform 0.3s ease-out, top 0.3s ease-out, bottom 0.3s ease-out;
+}
+.menu__button::before, .menu__button::after {
+  content: "";
+}
+.menu__button::before {
+  top: 10%;
+}
+.menu__button::after {
+  bottom: 10%;
+}
+.menu__button_line {
+  top: 50%;
+  transform: scale(1) translateY(-50%);
+}
+.menu__button_active {
+  transform: scale(1.1);
+}
+.menu__button_active .menu__button_line {
+  transform: scale(0);
+}
+.menu__button_active::after {
+  transform: rotate(-43deg);
+  bottom: 46%;
+}
+.menu__button_active::before {
+  transform: rotate(43deg);
+  top: 45%;
 }
 .menu__link {
   font-size: 0.875rem;
@@ -218,6 +297,17 @@ input[type=submit]:focus-visible,
 .menu__link:hover::after, .menu__link:focus-visible::after {
   width: 100%;
   left: 0;
+}
+@media (max-width: 768px) {
+  .menu__link {
+    font-size: 1.25rem;
+  }
+  .menu__link::after {
+    background-color: none;
+  }
+}
+.menu_active .menu__list {
+  top: 0;
 }
 
 /* ------------------------------------------------ */
@@ -363,8 +453,6 @@ input[type=submit]:focus-visible,
 }
 
 .card {
-  position: relative;
-  z-index: 10;
   padding: 35px 40px;
   background-color: #fff;
   box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
