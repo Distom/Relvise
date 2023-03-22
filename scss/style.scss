@@ -143,9 +143,10 @@ input[type=submit]:focus-visible,
 			padding: 30px;
 			padding-top: 80px;
 			text-align: center;
-			background: #fff;
-			transition: top 0.3s ease-out;
+			background: linear-gradient(#fff 0%, #fff 70%, transparent 100%);
+			transition: top 0.3s ease-out, opacity 0.3s ease-out;
 			z-index: 100;
+			opacity: 0;
 		}
 	}
 
@@ -251,9 +252,11 @@ input[type=submit]:focus-visible,
 
 		@media (max-width: 768px) {
 			font-size: toRem(20);
+			background-color: transparent;
+			box-shadow: none;
 
 			&::after {
-				background-color: none;
+				background-color: transparent;
 			}
 		}
 	}
@@ -261,6 +264,8 @@ input[type=submit]:focus-visible,
 	&_active {
 		.menu__list {
 			top: 0;
+			opacity: 1;
+			background: #fff;
 		}
 	}
 }

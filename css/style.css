@@ -217,9 +217,10 @@ input[type=submit]:focus-visible,
     padding: 30px;
     padding-top: 80px;
     text-align: center;
-    background: #fff;
-    transition: top 0.3s ease-out;
+    background: linear-gradient(#fff 0%, #fff 70%, transparent 100%);
+    transition: top 0.3s ease-out, opacity 0.3s ease-out;
     z-index: 100;
+    opacity: 0;
   }
 }
 .menu__button {
@@ -301,13 +302,17 @@ input[type=submit]:focus-visible,
 @media (max-width: 768px) {
   .menu__link {
     font-size: 1.25rem;
+    background-color: transparent;
+    box-shadow: none;
   }
   .menu__link::after {
-    background-color: none;
+    background-color: transparent;
   }
 }
 .menu_active .menu__list {
   top: 0;
+  opacity: 1;
+  background: #fff;
 }
 
 /* ------------------------------------------------ */
