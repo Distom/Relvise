@@ -98,7 +98,7 @@ input[type=submit]:focus-visible,
 		min-height: 105px;
 
 		@media (max-width: 768px) {
-			min-height: 60px;
+			min-height: 80px;
 			position: relative;
 		}
 	}
@@ -141,7 +141,7 @@ input[type=submit]:focus-visible,
 			width: 100vw;
 			height: 100vh;
 			padding: 30px;
-			padding-top: 80px;
+			padding-top: 100px;
 			text-align: center;
 			background: linear-gradient(#fff 0%, #fff 70%, transparent 100%);
 			transition: top 0.3s ease-out, opacity 0.3s ease-out;
@@ -204,12 +204,12 @@ input[type=submit]:focus-visible,
 			}
 
 			&::after {
-				transform: rotate(-43deg);
+				transform: rotate(43deg);
 				bottom: 46%;
 			}
 
 			&::before {
-				transform: rotate(43deg);
+				transform: rotate(-43deg);
 				top: 45%;
 			}
 		}
