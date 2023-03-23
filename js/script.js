@@ -26,4 +26,5 @@ function menuScrollTo(event) {
 	let menuLink = event.target.closest('.menu__link');
 	if (!menuLink) return;
 	toggleMenu();
+	event.preventDefault();
 }
