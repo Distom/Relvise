@@ -91,6 +91,12 @@ input[type=submit]:focus-visible,
 	width: 100%;
 	z-index: 10;
 
+	@media (max-width: 768px) {
+		position: fixed;
+		background: #fff;
+		border-bottom: 1px solid rgba(37, 43, 66, 0.1);
+	}
+
 	&__container {
 		display: flex;
 		gap: 36px;
@@ -98,7 +104,7 @@ input[type=submit]:focus-visible,
 		min-height: 105px;
 
 		@media (max-width: 768px) {
-			min-height: 80px;
+			min-height: 60px;
 			position: relative;
 		}
 	}
@@ -141,7 +147,7 @@ input[type=submit]:focus-visible,
 			width: 100vw;
 			height: 100vh;
 			padding: 30px;
-			padding-top: 100px;
+			padding-top: 80px;
 			text-align: center;
 			background: linear-gradient(#fff 0%, #fff 70%, transparent 100%);
 			transition: top 0.3s ease-out, opacity 0.3s ease-out;

@@ -1,5 +1,6 @@
 'use strict'
 
+let header = document.querySelector('.header');
 let menu = document.querySelector('.menu');
 let menuBtn = document.querySelector('.menu__button');
 let menuBurgerActive = false;
@@ -10,10 +11,7 @@ window.addEventListener('resize', removeMenuBurger);
 
 function removeMenuBurger() {
 	if (window.innerWidth > 768 && menuBurgerActive) {
-		menuBurgerActive = false;
-		menu.classList.remove('menu_active');
-		menuBtn.classList.remove('menu__button_active');
-		document.body.classList.remove('lock');
+		toggleMenu();
 	}
 }
 
