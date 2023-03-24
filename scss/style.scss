@@ -1010,7 +1010,7 @@ input[type=submit]:focus-visible,
 	&:focus-within {
 		background-color: #252B42;
 		transform: scale(1.13);
-		z-index: 10;
+		z-index: 5;
 
 		.support-card__email {
 			color: #ffffff;
